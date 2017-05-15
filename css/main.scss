@@ -1,0 +1,31 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+//$brand-primary:                     #3e1e06 !default;
+
+//$navbar-light-color:                rgba(62,30,6,.5) !default;
+//$navbar-light-hover-color:          rgba(62,30,6,.7) !default;
+//$navbar-light-active-color:         rgba(62,30,6,.9) !default;
+//$navbar-light-disabled-color:       rgba(62,30,6,.3) !default;
+
+@import "bootstrap/bootstrap";
+
+body {
+    padding-top: 3rem + $spacer * 2;
+}
+
+ul.checkmarks {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        padding-left: 1em;
+        
+        &:before {
+            content: '✓';
+            padding-right: 5px; 
+        }
+    }
+}
