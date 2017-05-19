@@ -8,8 +8,15 @@
         <div class="collapse navbar-collapse" id="asc-navbar">
             <ul class="navbar-nav mr-auto">
                 {% assign nav_items = site.pages | where_exp:"item", "item.order > 0" | sort: 'order' %} {% for item in nav_items %}
-                <li class="nav-item text-center{% if page.title == item.title %} active{% endif %}">
+                <li class="nav-item text-center{% if page.title == item.title %} active{% endif %}{% if item.navMode == 'dropdown'' %} dropdown{% endif %}">
+                    {% if item.navMode == 'item'' %}
                     <a class="nav-link" href="{{ item.permalink }}">{{ item.title }} {% if page.title == item.title %}<span class="sr-only">(current)</span>{% endif %}</a>
+                    {% else %}
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{ item.title }} {% if page.title == item.title %}<span class="sr-only">(current)</span>{% endif %}</a>
+                        <div class="dropdown-menu">
+                           {% include {{ item.dropdownInclude }} %}
+                        </div>
+                    {% endif %}
                 </li>
                 {% endfor %}
             </ul>

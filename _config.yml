@@ -41,3 +41,4 @@ defaults:
       layout: "default"
       description: "All Solutions Consulting, your partner in success!"
       order: 0
+      navMode: "item"

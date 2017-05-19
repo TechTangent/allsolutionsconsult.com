@@ -16,6 +16,11 @@ body {
     padding-top: 3rem + $spacer * 2;
 }
 
+h4:target {
+  padding-top: 3rem + $spacer * 2; 
+  margin-top: (-(3rem + $spacer * 2));
+}
+
 ul.checkmarks {
     list-style: none;
     padding-left: 0;
